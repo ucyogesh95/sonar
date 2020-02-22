@@ -15,27 +15,5 @@ pipeline {
                 }
                }
               }
-                                
-            
-        
-         stage ('Testing Stage') {
-            steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
-                {
-                    sh 'mvn test'
-                }
-               }            
-              }
-
-        
-        stage ('install Stage') {
-            steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
-                {
-                    sh 'mvn install'
-                }                                 
-              }
-            }
-
     }      
 }
