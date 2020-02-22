@@ -1,19 +1,22 @@
 pipeline {
     agent any
-    stages {  
-        stage ('SCM Checkout-clone-my-code') {
-            steps {
-               git branch: 'jenkinfilesonar', url: "https://github.com/ucyogesh95/sonar"
-         }
-        }
+    stages 
+            {  
+                    steps 
+                        {
+                            git branch: 'jenkinfilesonar', url: "https://github.com/ucyogesh95/sonar"
+                        }
+            }
     
-        stage ('Compile Stage') {
-            steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') 
-                {   
-                    sh 'mvn compile' 
-                }
-               }
+        stage ('Compile Stage') 
+            {
+                steps
+                    {
+                        withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') 
+                        {   
+                            sh 'mvn compile' 
+                        }
+                    }
               }
-    }      
-}
+            }      
+        
